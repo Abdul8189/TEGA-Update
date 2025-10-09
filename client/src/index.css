@@ -1,0 +1,341 @@
+/* 
+ * Tailwind CSS directives - these are processed by PostCSS/Tailwind
+ * These warnings can be safely ignored as they are valid Tailwind directives
+ */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* === ULTRA-AGGRESSIVE GLOBAL SCROLLBAR HIDING === */
+/* Force hide scrollbars on HTML and BODY first */
+html, body {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+  overflow-x: hidden !important;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+}
+
+/* Hide scrollbar for Chrome, Safari, and Edge - ALL ELEMENTS */
+*::-webkit-scrollbar,
+*::-webkit-scrollbar-button,
+*::-webkit-scrollbar-track,
+*::-webkit-scrollbar-track-piece,
+*::-webkit-scrollbar-thumb,
+*::-webkit-scrollbar-corner,
+*::-webkit-resizer {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  opacity: 0 !important;
+  background: transparent !important;
+  -webkit-appearance: none !important;
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox - ALL ELEMENTS */
+* {
+  -ms-overflow-style: none !important;  /* IE and Edge */
+  scrollbar-width: none !important;     /* Firefox */
+  /* Legacy IE scrollbar properties */
+  -ms-scrollbar-base-color: transparent !important;
+  scrollbar-base-color: transparent !important;
+  -ms-scrollbar-track-color: transparent !important;
+  scrollbar-track-color: transparent !important;
+  -ms-scrollbar-face-color: transparent !important;
+  scrollbar-face-color: transparent !important;
+  -ms-scrollbar-arrow-color: transparent !important;
+  scrollbar-arrow-color: transparent !important;
+  -ms-scrollbar-highlight-color: transparent !important;
+  scrollbar-highlight-color: transparent !important;
+  -ms-scrollbar-shadow-color: transparent !important;
+  scrollbar-shadow-color: transparent !important;
+  -ms-scrollbar-darkshadow-color: transparent !important;
+  scrollbar-darkshadow-color: transparent !important;
+  -ms-scrollbar-3dlight-color: transparent !important;
+  scrollbar-3dlight-color: transparent !important;
+}
+
+/* Specific targeting for common page elements */
+html, body, #root, .app, .main, .container, .page, .content, .wrapper {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+#root::-webkit-scrollbar,
+.app::-webkit-scrollbar,
+.main::-webkit-scrollbar,
+.container::-webkit-scrollbar,
+.page::-webkit-scrollbar,
+.content::-webkit-scrollbar,
+.wrapper::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Target all scrollable elements and containers */
+.tab-content,
+.tab-content *,
+[class*="overflow"],
+[class*="scroll"],
+div, section, article, aside, nav, main, header, footer,
+.overflow-auto, .overflow-scroll, .overflow-x-auto, .overflow-y-auto,
+.overflow-x-scroll, .overflow-y-scroll {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+.tab-content::-webkit-scrollbar,
+.tab-content *::-webkit-scrollbar,
+div::-webkit-scrollbar,
+section::-webkit-scrollbar,
+article::-webkit-scrollbar,
+aside::-webkit-scrollbar,
+nav::-webkit-scrollbar,
+main::-webkit-scrollbar,
+header::-webkit-scrollbar,
+footer::-webkit-scrollbar,
+.overflow-auto::-webkit-scrollbar,
+.overflow-scroll::-webkit-scrollbar,
+.overflow-x-auto::-webkit-scrollbar,
+.overflow-y-auto::-webkit-scrollbar,
+.overflow-x-scroll::-webkit-scrollbar,
+.overflow-y-scroll::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Ensure all nested elements also hide scrollbars */
+.tab-content > *,
+.tab-content > * > *,
+div > *,
+section > *,
+article > * {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.tab-content > *::-webkit-scrollbar,
+div > *::-webkit-scrollbar,
+section > *::-webkit-scrollbar,
+article > *::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+:root {
+  --brand: #2563eb;
+}
+
+* { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji'; }
+.container {
+  max-width: 48rem; /* max-w-3xl */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem; /* px-4 */
+  padding-right: 1rem;
+}
+.card {
+  background-color: white; /* bg-white */
+  border-radius: 1rem; /* rounded-2xl */
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); /* shadow-md */
+  padding: 2rem; /* p-8 */
+}
+.label {
+  display: block; /* block */
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500; /* font-medium */
+  margin-bottom: 0.25rem; /* mb-1 */
+}
+.input {
+  width: 100%; /* w-full */
+  border: 1px solid #d1d5db; /* border */
+  border-radius: 0.75rem; /* rounded-xl */
+  padding-left: 1rem; /* px-4 */
+  padding-right: 1rem;
+  padding-top: 0.5rem; /* py-2 */
+  padding-bottom: 0.5rem;
+  outline: none; /* outline-none */
+}
+.input:focus {
+  box-shadow: 0 0 0 3px rgb(59 130 246 / 0.5); /* focus:ring focus:ring-blue-200 */
+}
+.button {
+  width: 100%; /* w-full */
+  border-radius: 0.75rem; /* rounded-xl */
+  padding-left: 1rem; /* px-4 */
+  padding-right: 1rem;
+  padding-top: 0.75rem; /* py-3 */
+  padding-bottom: 0.75rem;
+  font-weight: 600; /* font-semibold */
+  background-color: #2563eb; /* bg-blue-600 */
+  color: white; /* text-white */
+  transition: background-color 0.15s ease-in-out; /* transition */
+}
+.button:hover {
+  background-color: #1d4ed8; /* hover:bg-blue-700 */
+}
+.link {
+  color: #2563eb; /* text-blue-600 */
+}
+.link:hover {
+  text-decoration: underline; /* hover:underline */
+}
+.perspective {
+  perspective: 1000px;
+}
+
+.transform-style {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* Line clamp utilities for text truncation */
+.line-clamp-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  line-clamp: 1; /* Standard property for future compatibility */
+}
+
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2; /* Standard property for future compatibility */
+}
+
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3; /* Standard property for future compatibility */
+}
+
+/* Smooth scrolling and scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+/* Ensure proper scroll restoration */
+* {
+  scroll-behavior: smooth;
+}
+
+/* Utility class for hiding scrollbars - can be applied to any element */
+.hide-scrollbar {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Force hide scrollbars on all elements with overflow */
+[style*="overflow"] {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+[style*="overflow"]::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* NUCLEAR OPTION - Force hide ALL scrollbars everywhere */
+html, body, #root, #root > div, #root > div > div {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+  overflow-x: hidden !important;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+#root::-webkit-scrollbar,
+#root > div::-webkit-scrollbar,
+#root > div > div::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+}
+
+/* Force hide scrollbars on any element that might have them */
+div, section, article, aside, nav, main, header, footer, p, span, a, button, input, textarea, select, table, tr, td, th, ul, ol, li {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+div::-webkit-scrollbar,
+section::-webkit-scrollbar,
+article::-webkit-scrollbar,
+aside::-webkit-scrollbar,
+nav::-webkit-scrollbar,
+main::-webkit-scrollbar,
+header::-webkit-scrollbar,
+footer::-webkit-scrollbar,
+p::-webkit-scrollbar,
+span::-webkit-scrollbar,
+a::-webkit-scrollbar,
+button::-webkit-scrollbar,
+input::-webkit-scrollbar,
+textarea::-webkit-scrollbar,
+select::-webkit-scrollbar,
+table::-webkit-scrollbar,
+tr::-webkit-scrollbar,
+td::-webkit-scrollbar,
+th::-webkit-scrollbar,
+ul::-webkit-scrollbar,
+ol::-webkit-scrollbar,
+li::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Ensure fixed headers stay on top and are not affected by scrollbar hiding */
+header, nav {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 50 !important;
+}
+
+/* Ensure main content has proper spacing for fixed headers - but not for default layout */
+main:not(.no-padding) {
+  padding-top: 3.5rem !important; /* 56px - further reduced */
+}
+
+/* Specific adjustments for different header heights */
+.pt-16 {
+  padding-top: 3.5rem !important; /* 56px */
+}
+
+.pt-20 {
+  padding-top: 5rem !important; /* 80px */
+}
